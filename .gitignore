@@ -5,7 +5,7 @@ relations_db
 django-debug-toolbar-master
 debug_toolbar
 
-settings
+settings.py
 *.sql
 
 .DS_Store
