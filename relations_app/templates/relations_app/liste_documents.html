@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Menu HTML / Javascript : Apercu</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+</head>
+
+<body>
+    {% for i in nom_artiste %} <img src="/static/img/{{i.artiste_nom}}.jpg" class="img-responsive" alt="toto" width="200" height="197"> {% endfor %} {% for nom_selectionne in nom_selectionne %} <img src="/static/img/{{nom_selectionne}}.jpg" class="img-responsive" alt="toto" width="200" height="197"> {% endfor %}
+
+
+
+
+    <br> <br> <br> <br> <br> <br> {% for i,adresse in dico_liste_documents.items %}
+
+
+    <ul class="list-unstyled">
+
+        <li><a href="{{adresse}}"> document  </a></li>
+
+        {{id_artiste}}
+
+
+
+
+    </ul>
+    {% endfor %}
+    <br> <br> <br> <br> <br> <br>
+
+
+
+
+
+</body>
+
+</html>

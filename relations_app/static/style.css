@@ -1,0 +1,129 @@
+h1,
+h2,
+h3,
+h4,
+h6 {
+    color: white;
+}
+
+body {
+    margin: 5px;
+    width: 11O%;
+    height: 100%;
+    color: white;
+
+
+    /*background-image:url("/static/digressions/images/horloge-decorative-en-bois.jpg");*/
+    background-size: 10%;
+    background-color: #560f28;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+
+}
+
+
+
+
+#bckg1 {
+    margin: 15px;
+
+    color: red;
+    background-image: background-size: 50%;
+    background-image: url("/static/digressions/images/horloge-decorative-en-bois.jpg");
+    background-color: black;
+    background-position: bottom;
+    background-repeat: repeat;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+footer {
+    margin: 10px;
+    font-size: 110%;
+    font-family: helvetica, arial, sans-serif;
+    columns: 5;
+}
+
+#block1 {
+    margin: 10px;
+    font-family: helvetica, arial, sans-serif;
+    columns: 2;
+}
+
+p {
+    color: black;
+    padding: 2px;
+    margin: 0;
+    background: white;
+
+    /* display: inline-block; width: 100%;
+  -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+    page-break-inside: avoid;
+    /* Firefox */
+    break-inside: avoid;
+    /* IE 10+ */
+    break-inside: avoid-column;
+    /* W3C */
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+/* Règle de base pour le lien */
+
+a {
+    color: dodgerblue;
+    font-size: 110%;
+    text-decoration: underline;
+
+}
+
+a:hover,
+a:focus {
+    color: red;
+}
+
+/* Position et couleur bulle */
+
+a span {
+    position: absolute;
+    margin-top: -250px;
+    margin-left: -250px;
+    color: black;
+    background: bisque;
+    padding: 10px;
+    border-radius: 10px;
+
+    /* Faire disparaire infobulle par défaut */
+    /* On determine l'origine de la rotation */
+    transform: scale(0) rotate(-180deg);
+    /* Faire durer l'effet */
+    transition: all .25s;
+    /* Effet sur la transparence */
+    opacity: 0;
+}
+
+/* Apparition de la bulle avec le scale à 1 */
+
+a:hover span,
+a:focus span {
+    transform: scale(0.8) rotate(0);
+    /* Effet sur la transparence */
+    opacity: 1;
+}
+
+
+
+
+
+/*p:first-child {background: tomato}
+p:nth-child(2) {background: orange}
+p:nth-child(3) {background: #800000}
+p:nth-child(4) {background: #FF3399}
+p:nth-child(5) {background: #3399FF}
+p:nth-child(6) {background: #bada55}**/

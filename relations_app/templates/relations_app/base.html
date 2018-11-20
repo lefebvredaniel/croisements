@@ -1,0 +1,122 @@
+<html>
+{% load static %}
+
+
+
+<body>
+
+
+    <title>croisements</title>
+    <META NAME="description" CONTENT="relations artistiques du début du siècle">
+    <META NAME="keywords" CONTENT="croisements">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'digressions/style.css' %}">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+    <script language="JavaScript">
+        function display_photo(p_name, p_w, p_h, p_legend) {
+            if (self.innerWidth) {
+                winwidth = self.innerWidth;
+                winheight = self.innerHeight;
+            } else if (document.documentElement && document.documentElement.clientWidth) {
+                winwidth = document.documentElement.clientWidth;
+                winheight = document.documentElement.clientHeight;
+            } else if (document.body) {
+                winwidth = document.body.clientWidth;
+                winheight = document.body.clientHeight;
+            }
+            if (Number(p_w) < winwidth) winwidth = Number(p_w);
+            if (Number(p_h) < winheight) winheight = Number(p_h);
+            winwidth += 30;
+            winheight += 60;
+            pwin = window.open('', 'combray', "toolbar=no,location=yes,directories=no,status=yes,menubar=no,resizable=no,scrollbars=no,copyhistory=no,width=" + winwidth + ",height=" + winheight + ",left=100,top=180");
+
+            pwin.document.write("<html><head>");
+            pwin.document.write("<title>Zoom</title>");
+            pwin.document.write("<style type=text/css>");
+            pwin.document.write("body {");
+            pwin.document.write("margin:5 5 5 5;");
+            pwin.document.write("padding:5;5 5 5");
+            pwin.document.write("color:red;");
+            pwin.document.write("background-color:white; }");
+            pwin.document.write("</style>");
+            pwin.document.write("</head>");
+            pwin.document.write("<body>");
+            pwin.document.write("<img src=" + p_name + " width=" + p_w + " height=" + p_h + ">");
+            pwin.document.write("<table noborder width=100%><tr>");
+            pwin.document.write("<form><td align=left>" + p_legend + "</td>");
+            pwin.document.write("<td align=right><input type='button' value='Fermer' onClick='window.close()'></td>");
+            pwin.document.write("</tr></table></form>");
+            pwin.document.write("</body></html>");
+        }
+
+    </script>
+
+    <body>
+
+
+
+
+
+
+
+
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="inactive"><a href="/">Accueil</a></li>
+                    <li><a href="/apropos">A propos</a></li>
+                    <li><a href="/poursyretrouver">Mots clés alpha <span> mots clés triés par ordre alphabétique </span></a></li>
+                    <li><a href="/liensinteressants">Autour de Proust</a></li>
+                    <li><a href="/grammaire">un peu de style <span> par Ilaria Vidotto </span></a></li>
+                    {% if user.is_authenticated %}
+
+                    <li><a href="#">{{user.username }}</a> </li>
+                    <li>
+
+                        <li><a href="/mescommentaires"> mes commentaires</a></li>
+                        {% else %}
+                        <li><a href="/accounts/login">se connecter <span> Se connecter permet d'écrire des commentaires; login non publié </span>
+          </a></li>
+                        {% endif %}
+
+
+
+
+                        <form class="navbar-form navbar-right" action="/recherche" method="POST">
+                            <div class="form-group">
+
+
+                                <p> <input type="text" class="form-control" name="mot" placeholder="mot recherché">
+
+                                    <input type="submit"></p>
+
+                                {% csrf_token %}
+                            </div>
+                        </form>
+                </ul>
+            </div>
+        </nav>
+
+
+        <div id="bckg1"> </div>
+
+    </body>
+
+    <body>
+
+        {% block content %} {% endblock %}
+    </body>
+
+
+
+</html>

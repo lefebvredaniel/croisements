@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Menu HTML / Javascript : Apercu</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/styles.css" />
+</head>
+
+<body>
+    {% for i in nom_artiste %} <img src="/static/img/{{i.artiste_nom}}.jpg" class="img-responsive" alt="toto" width="200" height="197"> {% endfor %} {% for nom_selectionne in nom_selectionne %} <img src="/static/img/{{nom_selectionne}}.jpg" class="img-responsive" alt="toto" width="200" height="197"> {% endfor %}
+
+
+    <br> <br> <br> <br> <br> <br> {% if dico %} {% for indice in dico %} {{indice.artiste_nom}}
+
+    <a href="/{{indice.id}}/connexion"> {{indice.artiste_nom}} </a> <img src="/static/img/{{indice.artiste_nom}}.jpg" class="img-responsive" alt="toto" width="200" height="197"> {% endfor %} {% endif %}
+
+
+
+</body>
+
+</html>

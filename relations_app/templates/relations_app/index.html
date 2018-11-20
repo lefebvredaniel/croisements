@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+"dfmlkjnqdklfnqdslkfndsfflkdqfn" {% extends 'relations_app/base.html' %} {% block content %}
+
+<head>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+"tutu"
+
+<body>
+
+
+    {% if dict_artiste %} {% for indice in dict_artiste %} {{indice.id}}
+
+    <a href="/{{indice.id}}/connexion"> {{indice.artiste_nom}} </a> <img src="/static/img/{{indice.artiste_nom}}.jpg" class="img-responsive" alt="toto" width="200" height="197"> {% endfor %} {% endif %}
+
+
+
+</body>
+{% endblock %}

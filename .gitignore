@@ -1,0 +1,11 @@
+*.pyc
+__pycache__
+venv
+relations_db
+django-debug-toolbar-master
+debug_toolbar
+
+settings
+*.sql
+
+.DS_Store
