@@ -2,33 +2,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>Menu HTML / Javascript : Apercu</title>
+    <title>croisements/documents</title>
 
     <link rel="stylesheet" type="text/css" href="/static/style.css" />
 </head>
 
 <body>
-    {% for i in nom_artiste %} <img src="/static/img/{{i.artiste_nom}}.jpg" class="img-responsive" alt="toto" width="200" height="197"> {% endfor %} {% for nom_selectionne in nom_selectionne %} <img src="/static/img/{{nom_selectionne}}.jpg" class="img-responsive" alt="toto" width="200" height="197"> {% endfor %}
+
+
+
+    <div id="container">
+
+        <ul id="nav1">
+            <li><a href="/">Accueil</a></li>
+
+            <li><a href="/apropos">A propos</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+
+        <p>
+            {% for i in nom_artiste %}
+            <img src="/static/img/{{i.artiste_nomjpg}}.jpg" class="img-responsive" alt="non trouvee" width="200" height="197"> {% endfor %}</p>
 
 
 
 
-    <br> <br> <br> <br> <br> <br> {% for i,adresse in dico_liste_documents.items %}
-
-
-    <ul class="list-unstyled">
-
-        <li><a href="{{adresse}}"> document  </a></li>
-
-        {{id_artiste}}
 
 
 
 
-    </ul>
-    {% endfor %}
-    <br> <br> <br> <br> <br> <br>
 
+
+        <br> <br> <br> <br> <br> <br> {% for i,adresse in dico_liste_documents.items %}
+
+
+        <ul class="list-unstyled">
+
+            <li><a href="{{adresse}}"> document  </a></li>
+
+
+
+
+
+
+        </ul>
+        {% endfor %}
+        <br> <br> <br> <br> <br> <br>
+
+    </div>
 
 
 

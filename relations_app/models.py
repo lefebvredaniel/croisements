@@ -18,18 +18,19 @@ class Documents(models.Model):
 class Artiste(models.Model):
 
 
-    artiste_nom = models.CharField(max_length=70,default="x")
+    artiste_nom = models.CharField(max_length=70)
     artiste_prénom = models.CharField(max_length=70)
     artiste_datenaissance = models.DateField(max_length=50)
     artiste_datedeces = models.DateField(max_length=50)
     artiste_wiki = models.URLField(blank=True)
     artiste_biolight=models.CharField(max_length=500,blank=True)
-    artiste_nomjpg=models.CharField(max_length=50)
+    artiste_nomjpg=models.CharField(max_length=500,default=artiste_nom)
+    
     
 
     def __str__(self):
          return self.artiste_nom
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField('date published',auto_now_add=True)
 
 
     def was_published_recently(self):

@@ -1,19 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html> {% load static %}
+<html>
 
 <head>
-    <title>Menu HTML / Javascript : Apercu</title>
+    <meta charset="utf-8" />
+    <title>croisements</title>
 
-    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <link href="/static/style.css" rel="stylesheet" type="text/css" media="screen" />
+
 </head>
 
 <body>
-    {% for i in nom_selectionne %} <img src="/static/img/{{i.artiste_nom}}.jpg" class="img-responsive" alt="toto" width="200" height="197">
+
+    <div id="container">
+
+        <p id="logo">{% for i in nom_selectionne %} <img src="/static/img/{{i.artiste_nomjpg}}.jpg" class="img-responsive" alt="photo non trouvee" width="200" height="197"></p>
+
+        <ul id="nav">
+            <li><a href="/">Accueil</a></li>
+
+            <li><a href="/apropos">A propos</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
 
 
-    <br> <br> <br> <br> <br> <br> {% if dico %} {% for indice in dico %} {{indice.artiste_nom}}
-    <a href="/{{indice.id}}/connexion"> {{indice.artiste_nom}} </a> <img src="/static/img/{{indice.artiste_nom}}.jpg" class="img-responsive" alt="toto" width="200" height="197">
-    <a href=" /{{indice.id}}/{{i.id}}/liste_documents"> document </a> {% endfor %} {% endif %} {% endfor %}
+        <br><br><br>
+
+        <div id="content">
+            {% if dico %} {% for indice in dico %}
+            <div class="portfolio-item">
+
+
+                <a href="/{{indice.id}}/connexion"> {{indice.artiste_nom}}  <img src="/static/img/{{indice.artiste_nomjpg}}.jpg" class="img-responsive" alt="photo non trouvee" width="200" height="197"></a>
+                <a href=" /{{indice.id}}/{{i.id}}/liste_documents"> vers documents entre {{i.artiste_nom}} et {{indice.artiste_nom}}  </a>
+                <p class="btn"><a href="{{indice.artiste_wiki}}">Wikipedia</a></p>
+
+            </div>
+            {% endfor %} {% endif %}{% endfor %}
+        </div>
+    </div>
 
 </body>
 

@@ -9,23 +9,33 @@ from .models import Documents
 from .models import R_artiste_documents
 
 
-class ChoixDocuments(admin.TabularInline):
-    model = R_artiste_documents
+class ChoixArtiste(admin.TabularInline):
 
+	model=R_artiste_documents
+	fields=['artiste_nom']
+
+class DocumentsAdmin(admin.ModelAdmin):
+    
+    
+	inlines = [ChoixArtiste]
 
 class ArtisteAdmin(admin.ModelAdmin):
 
   	
 
-    fields=['artiste_nom']
+    
     
     search_fields =['artiste_nom']
+    fields=['pub_date']
  
 
-    inlines = [ChoixDocuments]
+    
+
+
+	
    
 
-admin.site.register(Documents)
+admin.site.register(Documents, DocumentsAdmin)
 
 
 admin.site.register(Artiste)

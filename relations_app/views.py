@@ -34,8 +34,8 @@ def index(request):
 
     # titre_list=Extraits.objects.all()
     liste_artiste=Artiste.objects.all()
-    
-   
+
+
     context={'dict_artiste':liste_artiste}
 
     return render(request, 'relations_app/index.html',context)
@@ -43,48 +43,48 @@ def index(request):
 def connexion(request, artiste_id):
     nom_selectionne=Artiste.objects.filter(id=artiste_id)
 
-    
+
     dico={}
-    
+
     liste_documents=R_artiste_documents.objects.filter(artiste_nom_id=artiste_id)
-  
+
     for i in liste_documents:
         filtre=i.documents_adresse_id
-        
+
         liste_connexion=R_artiste_documents.objects.filter(documents_adresse_id=filtre)
         for j in liste_connexion:
             if j.artiste_nom!=i.artiste_nom:
                 dico[j.artiste_nom]=j.artiste_nom
-    
-   
- 
+
+
+
 
     context={'dico': dico,'nom_selectionne':nom_selectionne}
-    print(context)
+
     return render(request,'relations_app/connexion.html',context)
 
 def liste_documents(request,id_artisteS,id_artiste):
     dico_liste_documents={}
-    liste_documents=R_artiste_documents.objects.filter(artiste_nom_id=id_artisteS) 
-    
+    liste_documents=R_artiste_documents.objects.filter(artiste_nom_id=id_artisteS)
+
     for i in liste_documents:
         filtre=i.documents_adresse_id
         liste_connexion=R_artiste_documents.objects.filter(documents_adresse_id=filtre)
         for j in liste_connexion:
-           
+
             if j.artiste_nom_id==id_artiste:
                         dico_liste_documents[j.documents_adresse_id]=j.documents_adresse
-    
+
 
     criterion1 = Q(id__contains=id_artiste)
     criterion2 = Q(id__contains=id_artisteS)
 
     nom_artiste = Artiste.objects.filter(criterion1 | criterion2)
-    print(nom_artiste)
+
 
 
     context={'dico_liste_documents':dico_liste_documents,'nom_artiste':nom_artiste}
-    print(context)
+
     return render(request,'relations_app/liste_documents.html',context)
 
 

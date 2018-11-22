@@ -1,129 +1,233 @@
+body,
+div,
 h1,
 h2,
 h3,
 h4,
-h6 {
-    color: white;
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+img,
+form,
+fieldset,
+input,
+textarea,
+blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 body {
-    margin: 5px;
-    width: 11O%;
-    height: 100%;
-    color: white;
+    background: #f2f0eb url(images/bg.png);
+    font: 16px Helvetica, Arial, Sans-Serif;
+    color: #636363;
+    line-height: 24px;
+}
 
-
-    /*background-image:url("/static/digressions/images/horloge-decorative-en-bois.jpg");*/
-    background-size: 10%;
-    background-color: #560f28;
-    background-position: bottom;
-    background-repeat: no-repeat;
+div.u {
+    text-transform: lowercase;
 
 
 }
 
-
-
-
-#bckg1 {
-    margin: 15px;
-
-    color: red;
-    background-image: background-size: 50%;
-    background-image: url("/static/digressions/images/horloge-decorative-en-bois.jpg");
-    background-color: black;
-    background-position: bottom;
-    background-repeat: repeat;
-
+#container {
+    width: 1200px;
+    margin: 0 auto;
 }
 
-* {
-    box-sizing: border-box;
+#logo {
+    margin: 10px auto 0 auto;
+    position: relative;
+    width: 183px;
 }
 
-footer {
-    margin: 10px;
-    font-size: 110%;
-    font-family: helvetica, arial, sans-serif;
-    columns: 5;
+ul#nav {
+    width: 940px;
+    list-style: none;
+    overflow: hidden;
+    margin: -134px auto 25px auto;
 }
 
-#block1 {
-    margin: 10px;
-    font-family: helvetica, arial, sans-serif;
-    columns: 2;
+ul#nav1 {
+    width: 940px;
+    list-style: none;
+    overflow: hidden;
+    margin: auto 25px auto;
 }
 
-p {
-    color: black;
-    padding: 2px;
+ul#nav li {
+    width: 126px;
+    height: 33px;
+    float: left;
+    padding: 13px 0 0 0;
+    background: url(images/nav-bg.png);
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+ul#nav1 li {
+    width: 126px;
+    height: 33px;
+    float: left;
+    padding: 13px 0 0 0;
+    background: url(images/nav-bg.png);
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+ul#nav li:nth-child(1) {
+    margin: 0 60px 0 0;
+}
+
+ul#nav li:nth-child(2) {
+    margin: 0 316px 0 0;
+}
+
+ul#nav li:nth-child(3) {
+    margin: 0 60px 0 0;
+}
+
+ul#nav li:nth-child(4) {
     margin: 0;
-    background: white;
-
-    /* display: inline-block; width: 100%;
-  -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
-    page-break-inside: avoid;
-    /* Firefox */
-    break-inside: avoid;
-    /* IE 10+ */
-    break-inside: avoid-column;
-    /* W3C */
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
 }
 
-/* Règle de base pour le lien */
-
-a {
-    color: dodgerblue;
-    font-size: 110%;
-    text-decoration: underline;
-
+ul#nav li a {
+    color: #616369;
+    text-decoration: none;
 }
 
-a:hover,
-a:focus {
-    color: red;
+ul#nav li a:hover {
+    color: #a12121;
 }
 
-/* Position et couleur bulle */
+ul#nav1 li a {
+    color: #616369;
+    text-decoration: none;
+}
 
-a span {
-    position: absolute;
-    margin-top: -250px;
-    margin-left: -250px;
+#header {
+    height: 244px;
+    padding: 52px 0 0 57px;
+    background: url(images/home-header.jpg);
+}
+
+#header h1 {
+    font: 38px Georgia, Serif;
+    color: #f2f0eb;
+    letter-spacing: 2px;
+    margin: 0 0 20px 0;
+    text-shadow: 0px 3px 3px #494949;
+}
+
+#header h2 {
+    width: 1300px;
+    font: 20px Helvetica, Arial, Sans-Serif;
     color: black;
-    background: bisque;
-    padding: 10px;
-    border-radius: 10px;
+    letter-spacing: 1px;
+    margin: 0 0 20px 0;
+    text-align: center;
 
-    /* Faire disparaire infobulle par défaut */
-    /* On determine l'origine de la rotation */
-    transform: scale(0) rotate(-180deg);
-    /* Faire durer l'effet */
-    transition: all .25s;
-    /* Effet sur la transparence */
-    opacity: 0;
 }
 
-/* Apparition de la bulle avec le scale à 1 */
-
-a:hover span,
-a:focus span {
-    transform: scale(0.8) rotate(0);
-    /* Effet sur la transparence */
-    opacity: 1;
+#header p.btn a {
+    display: block;
+    width: 225px;
+    height: 50px;
+    overflow: hidden;
+    background: url(images/home-header-btn.jpg);
+    text-indent: -9999px;
 }
 
+#content {
+    background: url(img/.png) repeat-y;
+    padding: 57px 69px 50px 69px;
+    overflow: hidden;
+}
 
+#content h2 {
+    font: 30px Georgia, Serif;
+    letter-spacing: 2px;
+    margin: 0 0 20px 0;
+}
 
+#content h3 {
+    font: 26px Georgia, Serif;
+    letter-spacing: 2px;
+    margin: 0 0 20px 0;
+}
 
+#content p {
+    margin: 0 0 30px 0;
+}
 
-/*p:first-child {background: tomato}
-p:nth-child(2) {background: orange}
-p:nth-child(3) {background: #800000}
-p:nth-child(4) {background: #FF3399}
-p:nth-child(5) {background: #3399FF}
-p:nth-child(6) {background: #bada55}**/
+#content a {
+    color: #a12121;
+    text-decoration: none;
+}
+
+#content a:hover {
+    color: #671111;
+}
+
+#content .portfolio-item {
+    width: 182px;
+    padding: 4px;
+    background: #eee;
+    text-align: center;
+    float: left;
+    margin: 0 7px 14px 7px;
+}
+
+#content .portfolio-item p.btn {
+    margin: 0;
+}
+
+#content .portfolio-item p.btn a {
+    display: block;
+    width: 183px;
+    height: 29px;
+    padding: 7px 0 0 0;
+    background: url(images/see-more-bg.png);
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#footer {
+    background: url(images/footer-bg.png) no-repeat;
+    padding: 40px 0 0 0;
+    overflow: hidden;
+    margin: 0 0 30px 0;
+}
+
+#footer p#copyright {
+    font-size: 12px;
+    float: left;
+    margin: 0 0 0 30px;
+    color: #b8b6b2;
+}
+
+#footer p#back-top {
+    font-size: 12px;
+    float: right;
+    margin: 0 30px 0 0;
+}
+
+#footer a {
+    color: #a12121;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: #671111;
+}
