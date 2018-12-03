@@ -26,9 +26,11 @@ class ArtisteAdmin(admin.ModelAdmin):
     
     
     search_fields =['artiste_nom']
-    fields=['pub_date']
+    fields=['pub_date', 'artiste_nomjpg']
+    
+    
  
-
+	
     
 
 

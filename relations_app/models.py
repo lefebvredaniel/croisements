@@ -24,7 +24,7 @@ class Artiste(models.Model):
     artiste_datedeces = models.DateField(max_length=50)
     artiste_wiki = models.URLField(blank=True)
     artiste_biolight=models.CharField(max_length=500,blank=True)
-    artiste_nomjpg=models.CharField(max_length=500,default=artiste_nom)
+    artiste_nomjpg=models.CharField(max_length=500,default='nom_artiste')
     
     
 
@@ -54,6 +54,7 @@ class Commentaires(models.Model):
 class R_artiste_documents(models.Model):
    artiste_nom = models.ForeignKey(Artiste, on_delete=models.CASCADE)
    documents_adresse=models.ForeignKey(Documents, on_delete=models.CASCADE)
+   
    
 
 

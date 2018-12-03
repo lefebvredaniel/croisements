@@ -1,3 +1,4 @@
+
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
@@ -14,13 +15,15 @@ urlpatterns = [
 
 
     
- #    path('apropos', views.apropos, name='apropos'),
+ 	path('apropos', views.apropos, name='apropos'),
     path('<int:artiste_id>/connexion/',views.connexion, name='connexion'),
     path('<int:id_artiste>/<int:id_artisteS>/liste_documents/',views.liste_documents, name='liste_documents'),
     #path('<int:id_doc>/documents/',views.documents, name='documents'),
  #    path('poursyretrouver',views.poursyretrouver, name='poursyretrouver'),
- #    path('poursyretrouverFREQ',views.poursyretrouverFREQ, name='poursyretrouverFREQ'),
- #    path('liensinteressants',views.liensinteressants, name='liensinteressants'),
+ 	path('indexnaiss',views.indexnaiss, name='indexnaiss'),
+ 	path('indexdeces',views.indexdeces, name='indexdeces'),
+ 	path('longevite',views.longevite, name='longevite'),
+ 	path('work',views.work, name='work'),
  #    path('grammaire',views.grammaire, name='liensinteressants'),
  #    path('mescommentaires',views.mescommentaires, name='mescommentaires'),
  #    path('<int:id>/mescommentaires/asupprimer',views.supprimer, name='supprimer'),
@@ -28,7 +31,7 @@ urlpatterns = [
  # #   path('message',views.message, name='message'),
  #    path('recherche', views.recherche, name='recherche'),
  #    path('recherche1', views.recherche1, name='recherche1'),
- #    path ('contact',views.contact,name='contact'),
+ 	  path ('contact',views.contact,name='contact'),
  #    path('commentaires_list',CommentairesListView.as_view(),name="ProductListView"),
  #    path('<int:id>/<int:titre_id>/mescommentaires/asupprimer1',views.supprimer1, name='supprimer1'),
  #    path('<int:id>/mescommentaires/amodifier1',views.modifier1, name='modifier1'),

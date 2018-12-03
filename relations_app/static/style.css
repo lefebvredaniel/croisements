@@ -1,34 +1,30 @@
-body,
-div,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-li,
-dl,
-dt,
-dd,
-img,
-form,
-fieldset,
-input,
-textarea,
-blockquote {
-    margin: 0;
-    padding: 0;
-    border: 0;
+@charset "utf-8";
+
+
+aside {
+
+    font: 25px/20px bold Times, serif;
+    color: #f7e5ed;
+
+
+
+
+    line-height: 24px;
+    width: 500px;
+    margin: auto;
+    text-align: center
 }
 
 body {
-    background: #f2f0eb url(images/bg.png);
+
+    background-color: #0a0840;
     font: 16px Helvetica, Arial, Sans-Serif;
     color: #636363;
     line-height: 24px;
+}
+
+a {
+    color: white;
 }
 
 div.u {
@@ -38,14 +34,20 @@ div.u {
 }
 
 #container {
-    width: 1200px;
+
     margin: 0 auto;
 }
 
 #logo {
     margin: 10px auto 0 auto;
     position: relative;
-    width: 183px;
+    width: 200px;
+}
+
+#logo1 {
+    margin: 10px auto 0 auto;
+    position: relative;
+    width: 700px;
 }
 
 ul#nav {
@@ -78,7 +80,7 @@ ul#nav1 li {
     height: 33px;
     float: left;
     padding: 13px 0 0 0;
-    background: url(images/nav-bg.png);
+
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
@@ -101,7 +103,7 @@ ul#nav li:nth-child(4) {
 }
 
 ul#nav li a {
-    color: #616369;
+    color: red;
     text-decoration: none;
 }
 
@@ -110,7 +112,7 @@ ul#nav li a:hover {
 }
 
 ul#nav1 li a {
-    color: #616369;
+    color: #a12121;
     text-decoration: none;
 }
 
@@ -129,7 +131,7 @@ ul#nav1 li a {
 }
 
 #header h2 {
-    width: 1300px;
+
     font: 20px Helvetica, Arial, Sans-Serif;
     color: black;
     letter-spacing: 1px;
@@ -148,8 +150,9 @@ ul#nav1 li a {
 }
 
 #content {
-    background: url(img/.png) repeat-y;
+    color: #f7e5ed;
     padding: 57px 69px 50px 69px;
+
     overflow: hidden;
 }
 
@@ -162,7 +165,7 @@ ul#nav1 li a {
 #content h3 {
     font: 26px Georgia, Serif;
     letter-spacing: 2px;
-    margin: 0 0 20px 0;
+    margin: 0 0 0px 0;
 }
 
 #content p {
@@ -170,7 +173,8 @@ ul#nav1 li a {
 }
 
 #content a {
-    color: #a12121;
+    color: darkblue;
+    font: 13px Helvetica, Arial, Sans-Serif;
     text-decoration: none;
 }
 
@@ -179,12 +183,13 @@ ul#nav1 li a {
 }
 
 #content .portfolio-item {
+
     width: 182px;
     padding: 4px;
-    background: #eee;
+    background: bisque;
     text-align: center;
     float: left;
-    margin: 0 7px 14px 7px;
+    margin: -10px 10px 14px 0px;
 }
 
 #content .portfolio-item p.btn {
@@ -196,7 +201,7 @@ ul#nav1 li a {
     width: 183px;
     height: 29px;
     padding: 7px 0 0 0;
-    background: url(images/see-more-bg.png);
+
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
@@ -204,7 +209,7 @@ ul#nav1 li a {
 }
 
 #footer {
-    background: url(images/footer-bg.png) no-repeat;
+
     padding: 40px 0 0 0;
     overflow: hidden;
     margin: 0 0 30px 0;
@@ -230,4 +235,44 @@ ul#nav1 li a {
 
 #footer a:hover {
     color: #671111;
+}
+
+#IMG.displayed {
+    display: block;
+    margin-left: 10px;
+    margin-right: auto;
+
+}
+
+.imageflottante {
+    float: left;
+    margin-right: 20px;
+}
+
+.imageflottanteR {
+    float: right;
+}
+
+.imageflottante {
+    float: left;
+}
+
+.dessous {
+    clear: both;
+}
+
+#conteneur {
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+div.boutons form,
+div.boutons input {
+    display: inline-flex;
+    background-color: navajowhite;
+    margin: auto;
+
 }

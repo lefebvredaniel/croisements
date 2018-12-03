@@ -10,46 +10,86 @@
 </head>
 
 <body>
-    <div id="container">
-        <p id="logo"><a href="#"><img src="/static/img/picasso_apollinaire.png" class="img-responsive" alt="toto" width="200" height="197" alt=" logo" /> </a></p>
 
-        <ul id="nav">
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/apropos">A propos</a></li>
-            <li><a href="#"></a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <p id="logo"><a href="#"><img src="/static/img/picasso_apollinaire.png" class="img-responsive" alt="logo" width="170" height="170" alt=" logo" /> </a></p>
 
-        <div id="header">
-
-            <br> <br>
-            <h2>Comme Picasso et Apollinaire d'autres artistes ont entretenu des relations "pistées" par des documents qui sont reproduits ici. <br> Cliquer sur une vignette pour sélectionner une personnalité. Vous verrez alors les liens qu'il avait avec les autres personnages du portfolio </h2>
-
-            <!--            <p class="btn"><a href="portfolio.html">View my portfolio</a></p>-->
-        </div>
-        <div id="content">
+    <ul id="nav">
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/apropos">A propos</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
 
 
 
-            {% if dict_artiste %} {% for indice in dict_artiste %}
-            <div class="portfolio-item">
+    <div id="content">
 
+        <br> <br>
+        <aside>Comme Picasso et Apollinaire d'autres artistes ont entretenu des relations tracées par des documents qui sont reproduits ici.</aside> <br> <br>
+        <aside style="font-family: times; font-size: 100%;margin-bottom: -50px;color:bisque"> Cliquer sur une vignette pour sélectionner une personnalité. Vous verrez alors les liens qu'elle avait avec les autres personnalités du portfolio </aside>
 
-
-                <a href="/{{indice.id}}/connexion"> {{indice.artiste_nom}} 
-                <img src="/static/img/{{indice.artiste_nomjpg}}.jpg" class="img-responsive" alt="photo non trouvée" width="170" height="170"></a>
-                <p class="btn"><a href="{{indice.artiste_wiki}}">Wikipédia</a></p>
-            </div>
-            {% endfor %} {% endif %}
-        </div>
-
-
+        <!--            <p class="btn"><a href="portfolio.html">View my portfolio</a></p>-->
     </div>
+    <div class="boutons">
+        <form action="/indexnaiss" method="POST">
+
+
+            <!--        <p> <input type="text" class="form-control" name="mot" placeholder="mot clé">-->
+
+            <input type="submit" value="Tri par année de naissance"> {% csrf_token %}
+
+        </form>
+        <form action="/" method="POST">
+
+
+
+            <!--        <p> <input type="text" class="form-control" name="mot" placeholder="mot clé">-->
+
+            <input type="submit" value="Tri par nom"> {% csrf_token %}
+
+        </form>
+        <form action="/indexdeces" method="POST">
+
+
+
+            <!--        <p> <input type="text" class="form-control" name="mot" placeholder="mot clé">-->
+
+            <input type="submit" value="Tri par année de décès"> {% csrf_token %}
+
+        </form>
+        <form action="/longevite" method="POST">
+
+
+
+            <!--        <p> <input type="text" class="form-control" name="mot" placeholder="mot clé">-->
+
+            <input type="submit" value="Tri par longevite"> {% csrf_token %}
+
+        </form>
+    </div>
+
+    <div id="content">
+
+
+
+        {% if dict_artiste %} {% for indice in dict_artiste %}
+        <div class="portfolio-item">
+
+
+
+            <a href="/{{indice.id}}/connexion">  {{indice.artiste_datenaissance|date:"Y"}}-{{indice.artiste_datedeces|date:"Y"}}  
+                <img src="/static/img/{{indice.artiste_nomjpg}}.jpg" class="img-responsive" alt="photo non trouvée" width="170" height="170"></a>
+            <p class="btn"><a href="{{indice.artiste_wiki}}">{{indice.artiste_nom}} Wikipédia</a></p>
+        </div>
+        {% endfor %} {% endif %}
+    </div>
+
+
+
 
     <div id="footer">
 
     </div>
-
 
 
 

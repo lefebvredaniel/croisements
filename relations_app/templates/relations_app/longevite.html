@@ -1,0 +1,44 @@
+<!DOCTYPE html> {% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>croisements</title>
+
+    <link href="/static/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <p id="logo"><a href="#"><img src="/static/img/picasso_apollinaire.png" class="img-responsive" alt="logo" width="170" height="170" alt=" logo" /> </a></p>
+
+    <ul id="nav">
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/apropos">A propos</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="contact">Contact</a></li>
+    </ul>
+
+    <br><br><br> {% for indice in dictionnaire_longevite %}
+
+    <span style=color:aliceblue;margin-left:{{indice.anaiss2}}px;> {{indice.anaiss4}}-{{indice.adeces4}}
+   <span  style="text-align:center;">
+       &nbsp; &nbsp;&nbsp; &nbsp;<a href="/{{indice.id}}/connexion">{{indice.artiste_nom}} ({{indice.age}} ans)</a> </span> </span>
+
+
+
+    <hr style="text-align:left;margin:auto;margin-left:{{indice.anaiss2}}px;  width: {{indice.age}}%; height: 5px; background-color: #f90; border: none;" />{% endfor %}
+
+
+
+
+</body>
+
+
+
+
+
+</html>

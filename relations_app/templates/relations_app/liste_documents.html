@@ -1,10 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html> {% load static %}
 
 <head>
     <title>croisements/documents</title>
 
-    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+
+    <link href="/static/style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 
 <body>
@@ -35,12 +35,13 @@
 
 
 
-        <br> <br> <br> <br> <br> <br> {% for i,adresse in dico_liste_documents.items %}
+        <br> <br> <br> <br> <br> <br> {% for i,value in dico_liste_documents.items %} {% for k in value %}
 
 
         <ul class="list-unstyled">
 
-            <li><a href="{{adresse}}"> document  </a></li>
+
+            <li><a href="{{k.documents_adresse}}"> {{k.documents_commentaires }}   </a></li> {% endfor %}
 
 
 
